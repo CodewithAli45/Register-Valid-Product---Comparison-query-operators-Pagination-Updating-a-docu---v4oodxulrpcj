@@ -13,10 +13,6 @@ app.get("/",async function(req,res){
     var name = req.query.name;
     var description  = req.query.description;
     var price = req.query.price;
-    const product_name = await products.findOne(name);
-    if(product_name){
-        return res.status(400).send("Product Name already exists");
-    }
     var newProduct = {
         "name":name,
         "description":description,
