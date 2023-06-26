@@ -21,7 +21,7 @@ app.get("/",async function(req,res){
 
     products.create(newProduct).then((product) => {
         // console.log(user);
-        res.send(product._id);
+        res.status(200).send(product._id);
     })
     .catch((error) => {
         console.log(error.message);
