@@ -7,7 +7,7 @@ var productSchema = mongoose.Schema({
         type : String,
         required : true,
         validate: {
-            async validate(value){
+            async validator(value){
                 const nameExists = await checkName(User, value);
                 return !nameExists;
             },
